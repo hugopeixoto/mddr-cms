@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Organizations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Display name</th>
+      <th>Legal name</th>
+      <th>Url</th>
+      <th>Department</th>
+      <th>Street address</th>
+      <th>City</th>
+      <th>Neighbourhood</th>
+      <th>Postal code</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Requires identification</th>
+      <th>Operating countries</th>
+      <th>Custom identifier</th>
+      <th>Identifiers</th>
+      <th>Generic url</th>
+      <th>Generic email</th>
+      <th>Generic note</th>
+      <th>Access url</th>
+      <th>Access email</th>
+      <th>Access note</th>
+      <th>Deletion url</th>
+      <th>Deletion email</th>
+      <th>Deletion note</th>
+      <th>Portability url</th>
+      <th>Portability email</th>
+      <th>Portability note</th>
+      <th>Correction url</th>
+      <th>Correction email</th>
+      <th>Correction note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @organizations.each do |organization| %>
+      <tr>
+        <td><%= organization.display_name %></td>
+        <td><%= organization.legal_name %></td>
+        <td><%= organization.url %></td>
+        <td><%= organization.department %></td>
+        <td><%= organization.street_address %></td>
+        <td><%= organization.city %></td>
+        <td><%= organization.neighbourhood %></td>
+        <td><%= organization.postal_code %></td>
+        <td><%= organization.region %></td>
+        <td><%= organization.country %></td>
+        <td><%= organization.requires_identification %></td>
+        <td><%= organization.operating_countries %></td>
+        <td><%= organization.custom_identifier %></td>
+        <td><%= organization.identifiers %></td>
+        <td><%= organization.generic_url %></td>
+        <td><%= organization.generic_email %></td>
+        <td><%= organization.generic_note %></td>
+        <td><%= organization.access_url %></td>
+        <td><%= organization.access_email %></td>
+        <td><%= organization.access_note %></td>
+        <td><%= organization.deletion_url %></td>
+        <td><%= organization.deletion_email %></td>
+        <td><%= organization.deletion_note %></td>
+        <td><%= organization.portability_url %></td>
+        <td><%= organization.portability_email %></td>
+        <td><%= organization.portability_note %></td>
+        <td><%= organization.correction_url %></td>
+        <td><%= organization.correction_email %></td>
+        <td><%= organization.correction_note %></td>
+        <td><%= link_to 'Show', organization %></td>
+        <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
+        <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Organization', new_organization_path %>

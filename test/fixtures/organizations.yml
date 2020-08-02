@@ -1,0 +1,63 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  display_name: MyText
+  legal_name: MyText
+  url: MyString
+  department: MyString
+  street_address: MyString
+  city: MyString
+  neighbourhood: MyString
+  postal_code: MyString
+  region: MyString
+  country: MyString
+  requires_identification: false
+  operating_countries: MyText
+  custom_identifier: MyString
+  identifiers: MyText
+  generic_url: MyString
+  generic_email: MyString
+  generic_note: MyText
+  access_url: MyString
+  access_email: MyString
+  access_note: MyText
+  deletion_url: MyString
+  deletion_email: MyString
+  deletion_note: MyText
+  portability_url: MyString
+  portability_email: MyString
+  portability_note: MyText
+  correction_url: MyString
+  correction_email: MyString
+  correction_note: MyText
+
+two:
+  display_name: MyText
+  legal_name: MyText
+  url: MyString
+  department: MyString
+  street_address: MyString
+  city: MyString
+  neighbourhood: MyString
+  postal_code: MyString
+  region: MyString
+  country: MyString
+  requires_identification: false
+  operating_countries: MyText
+  custom_identifier: MyString
+  identifiers: MyText
+  generic_url: MyString
+  generic_email: MyString
+  generic_note: MyText
+  access_url: MyString
+  access_email: MyString
+  access_note: MyText
+  deletion_url: MyString
+  deletion_email: MyString
+  deletion_note: MyText
+  portability_url: MyString
+  portability_email: MyString
+  portability_note: MyText
+  correction_url: MyString
+  correction_email: MyString
+  correction_note: MyText
