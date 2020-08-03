@@ -9,12 +9,11 @@
 <table>
   <tbody>
     <% @organizations.group_by(&:industry).each do |industry, organizations| %>
-      <tr class='industry'><th colspan='10'><%= industry %></th></tr>
+      <tr class='industry'><th colspan='9'><%= industry %></th></tr>
       <tr>
         <th>Mgmt</th>
         <th>Basic info</th>
         <th>Address</th>
-        <th>Operating countries</th>
         <th>Identification</th>
         <th>Generic</th>
         <th>Access</th>
