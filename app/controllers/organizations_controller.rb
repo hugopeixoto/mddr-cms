@@ -11,7 +11,7 @@ class OrganizationsController < ApplicationController
   # GET /organizations
   # GET /organizations.json
   def index
-    @organizations = Organization.all
+    @organizations = Organization.all.order(:industry)
   end
 
   # GET /organizations/1
@@ -77,6 +77,6 @@ class OrganizationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def organization_params
-      params.require(:organization).permit(:display_name, :legal_name, :url, :department, :street_address, :city, :neighbourhood, :postal_code, :region, :country, :requires_identification, :operating_countries, :custom_identifier, :identifiers, :generic_url, :generic_email, :generic_note, :access_url, :access_email, :access_note, :deletion_url, :deletion_email, :deletion_note, :portability_url, :portability_email, :portability_note, :correction_url, :correction_email, :correction_note)
+      params.require(:organization).permit(:display_name, :legal_name, :url, :department, :street_address, :city, :neighbourhood, :postal_code, :region, :country, :requires_identification, :operating_countries, :custom_identifier, :identifiers, :generic_url, :generic_email, :generic_note, :access_url, :access_email, :access_note, :deletion_url, :deletion_email, :deletion_note, :portability_url, :portability_email, :portability_note, :correction_url, :correction_email, :correction_note, :industry)
     end
 end

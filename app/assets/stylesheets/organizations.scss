@@ -14,3 +14,10 @@ fieldset > legend { font-weight: bold }
 
 div.avoid-break { break-inside: avoid; }
 fieldset { break-inside: avoid; }
+
+table { border-collapse: collapse; }
+tr { border-top: 1px solid black; }
+tr.industry { background-color: black; color: white; }
+
+th { text-align: left; }
+tr.industry th { text-align: center; }

@@ -16,6 +16,11 @@
       <legend>Basic info</legend>
 
       <div class="field">
+        <%= form.label :industry %>
+        <%= form.select(:industry, Organization::Industries.map{|x|[x,x]}) %>
+      </div>
+
+      <div class="field">
         <%= form.label :display_name %>
         <%= form.text_field :display_name %>
       </div>

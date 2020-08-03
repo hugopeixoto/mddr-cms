@@ -2,86 +2,86 @@
 
 <h1>Organizations</h1>
 
-<%= link_to 'Home / settings', root_path %>
+<p><%= link_to 'Home / settings', root_path %></p>
+
+<p><%= link_to 'New Organization', new_organization_path %></p>
 
 <table>
-  <thead>
-    <tr>
-      <th>Mgmt</th>
-      <th>Basic info</th>
-      <th>Address</th>
-      <th>Operating countries</th>
-      <th>Identification</th>
-      <th>Generic</th>
-      <th>Access</th>
-      <th>Deletion</th>
-      <th>Portability</th>
-      <th>Correction</th>
-    </tr>
-  </thead>
-
   <tbody>
-    <% @organizations.each do |organization| %>
+    <% @organizations.group_by(&:industry).each do |industry, organizations| %>
+      <tr class='industry'><th colspan='10'><%= industry %></th></tr>
       <tr>
-        <td>
-          <p><strong>by:</strong> <%= organization.author_name || "anonymous" %></p>
-
-          <%# if organization.author_auth == cookies[:auth] %>
-            <p><%= link_to 'Edit', edit_organization_path(organization) %></p>
-            <p><%= link_to 'Destroy', confirm_deletion_organization_path(organization) %></p>
-          <%# end %>
-        </td>
-        <td>
-          <p><strong>display name:</strong> <%= organization.display_name %></p>
-          <p><strong>legal name:</strong> <%= organization.legal_name %></p>
-          <p><strong>URL:</strong> <%= organization.url %></p>
-          <p><strong>operating countries:</strong> <%= organization.operating_countries %></p>
-        </td>
-        <td>
-          <p><strong>recpt/dept:</strong> <%= organization.department %></p>
-          <p><strong>street:</strong> <%= organization.street_address %></p>
-          <p><strong>city:</strong> <%= organization.city %></p>
-          <p><strong>postal code:</strong> <%= organization.postal_code %></p>
-          <p><strong>country:</strong> <%= organization.country %></p>
-        </td>
-
-        <td>
-          <p><strong>required:</strong> <%= organization.requires_identification %></p>
-          <p><strong>identifiers:</strong> <%= organization.identifiers %></p>
-          <p><strong>custom ids:</strong> <%= organization.custom_identifier %></p>
-        </td>
-
-        <td>
-          <p><strong>url:</strong>   <%= organization.generic_url %></p>
-          <p><strong>email:</strong> <%= organization.generic_url %></p>
-          <p><strong>note:</strong>  <%= organization.generic_url %></p>
-        </td>
-        <td>
-          <p><strong>url:</strong>   <%= organization.access_url %></p>
-          <p><strong>email:</strong> <%= organization.access_url %></p>
-          <p><strong>note:</strong>  <%= organization.access_url %></p>
-        </td>
-        <td>
-          <p><strong>url:</strong>   <%= organization.portability_url %></p>
-          <p><strong>email:</strong> <%= organization.portability_url %></p>
-          <p><strong>note:</strong>  <%= organization.portability_url %></p>
-        </td>
-        <td>
-          <p><strong>url:</strong>   <%= organization.correction_url %></p>
-          <p><strong>email:</strong> <%= organization.correction_url %></p>
-          <p><strong>note:</strong>  <%= organization.correction_url %></p>
-        </td>
-        <td>
-          <p><strong>url:</strong>   <%= organization.deletion_url %></p>
-          <p><strong>email:</strong> <%= organization.deletion_url %></p>
-          <p><strong>note:</strong>  <%= organization.deletion_url %></p>
-        </td>
-
+        <th>Mgmt</th>
+        <th>Basic info</th>
+        <th>Address</th>
+        <th>Operating countries</th>
+        <th>Identification</th>
+        <th>Generic</th>
+        <th>Access</th>
+        <th>Deletion</th>
+        <th>Portability</th>
+        <th>Correction</th>
       </tr>
+
+      <% organizations.each do |organization| %>
+        <tr>
+          <td>
+            <p><strong>by:</strong> <%= organization.author_name || "anonymous" %></p>
+
+            <%# if organization.author_auth == cookies[:auth] %>
+              <p><%= link_to 'Edit', edit_organization_path(organization) %></p>
+              <p><%= link_to 'Destroy', confirm_deletion_organization_path(organization) %></p>
+            <%# end %>
+          </td>
+          <td>
+            <p><strong>industry:</strong> <%= organization.industry %></p>
+            <p><strong>display name:</strong> <%= organization.display_name %></p>
+            <p><strong>legal name:</strong> <%= organization.legal_name %></p>
+            <p><strong>URL:</strong> <%= organization.url %></p>
+            <p><strong>operating countries:</strong> <%= organization.operating_countries %></p>
+          </td>
+          <td>
+            <p><strong>recpt/dept:</strong> <%= organization.department %></p>
+            <p><strong>street:</strong> <%= organization.street_address %></p>
+            <p><strong>city:</strong> <%= organization.city %></p>
+            <p><strong>postal code:</strong> <%= organization.postal_code %></p>
+            <p><strong>country:</strong> <%= organization.country %></p>
+          </td>
+
+          <td>
+            <p><strong>required:</strong> <%= organization.requires_identification %></p>
+            <p><strong>identifiers:</strong> <%= organization.identifiers %></p>
+            <p><strong>custom ids:</strong> <%= organization.custom_identifier %></p>
+          </td>
+
+          <td>
+            <p><strong>url:</strong>   <%= organization.generic_url %></p>
+            <p><strong>email:</strong> <%= organization.generic_url %></p>
+            <p><strong>note:</strong>  <%= organization.generic_url %></p>
+          </td>
+          <td>
+            <p><strong>url:</strong>   <%= organization.access_url %></p>
+            <p><strong>email:</strong> <%= organization.access_url %></p>
+            <p><strong>note:</strong>  <%= organization.access_url %></p>
+          </td>
+          <td>
+            <p><strong>url:</strong>   <%= organization.portability_url %></p>
+            <p><strong>email:</strong> <%= organization.portability_url %></p>
+            <p><strong>note:</strong>  <%= organization.portability_url %></p>
+          </td>
+          <td>
+            <p><strong>url:</strong>   <%= organization.correction_url %></p>
+            <p><strong>email:</strong> <%= organization.correction_url %></p>
+            <p><strong>note:</strong>  <%= organization.correction_url %></p>
+          </td>
+          <td>
+            <p><strong>url:</strong>   <%= organization.deletion_url %></p>
+            <p><strong>email:</strong> <%= organization.deletion_url %></p>
+            <p><strong>note:</strong>  <%= organization.deletion_url %></p>
+          </td>
+
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Organization', new_organization_path %>
