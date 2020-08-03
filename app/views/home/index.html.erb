@@ -1,0 +1,21 @@
+<h1>MDDR/D3 editor</h1>
+
+<% if cookies[:auth].present? && cookies[:password] == ENV["PASSWORD"] %>
+  <p><%= link_to 'Add some organizations', organizations_path %></p>
+  <p><%= button_to 'Logout', logout_path %></p>
+
+  <%= form_with url: name_path do |f| %>
+    <p>
+      <%= f.text_field :name, placeholder: 'Your name', value: cookies[:name] %>
+      <%= f.submit 'Change name' %>
+    </p>
+  <% end %>
+<% else %>
+  <p>To add organizations, you need to login. We'll set some cookies if you do.</p>
+  <p>Check the #my-data-done-right channel in rocket for licensing concerns.</p>
+  <%= form_with url: login_path do |f| %>
+    <p><%= f.text_field :name, placeholder: 'Your name' %></p>
+    <p><%= f.password_field :password, placeholder: 'Password (ask the D3 team)', value: params[:pwd] %></p>
+    <p><%= f.submit 'Login' %></p>
+  <% end %>
+<% end %>

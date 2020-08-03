@@ -1,5 +1,12 @@
 class OrganizationsController < ApplicationController
-  before_action :set_organization, only: [:show, :edit, :update, :destroy]
+  before_action :set_organization, only: [:show, :edit, :update, :destroy, :confirm_deletion]
+  before_action :check_auth
+
+  def check_auth
+    if cookies[:auth].blank? || cookies[:password] != ENV["PASSWORD"]
+      redirect_to root_path
+    end
+  end
 
   # GET /organizations
   # GET /organizations.json
@@ -24,15 +31,16 @@ class OrganizationsController < ApplicationController
   # POST /organizations
   # POST /organizations.json
   def create
-    @organization = Organization.new(organization_params)
+    @organization = Organization.new(organization_params.merge(
+      author_name: cookies[:name],
+      author_auth: cookies[:auth],
+    ))
 
     respond_to do |format|
       if @organization.save
-        format.html { redirect_to @organization, notice: 'Organization was successfully created.' }
-        format.json { render :show, status: :created, location: @organization }
+        format.html { redirect_to organizations_path }
       else
         format.html { render :new }
-        format.json { render json: @organization.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,13 +50,14 @@ class OrganizationsController < ApplicationController
   def update
     respond_to do |format|
       if @organization.update(organization_params)
-        format.html { redirect_to @organization, notice: 'Organization was successfully updated.' }
-        format.json { render :show, status: :ok, location: @organization }
+        format.html { redirect_to organizations_path }
       else
         format.html { render :edit }
-        format.json { render json: @organization.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def confirm_deletion
   end
 
   # DELETE /organizations/1
@@ -57,7 +66,6 @@ class OrganizationsController < ApplicationController
     @organization.destroy
     respond_to do |format|
       format.html { redirect_to organizations_url, notice: 'Organization was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

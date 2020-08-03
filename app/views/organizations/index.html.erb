@@ -2,10 +2,12 @@
 
 <h1>Organizations</h1>
 
+<%= link_to 'Home / settings', root_path %>
+
 <table>
   <thead>
     <tr>
-      <th>Actions</th>
+      <th>Mgmt</th>
       <th>Basic info</th>
       <th>Address</th>
       <th>Operating countries</th>
@@ -22,9 +24,12 @@
     <% @organizations.each do |organization| %>
       <tr>
         <td>
-        <p><%= link_to 'Show', organization %></p>
-        <p><%= link_to 'Edit', edit_organization_path(organization) %></p>
-        <p><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <p><strong>by:</strong> <%= organization.author_name || "anonymous" %></p>
+
+          <%# if organization.author_auth == cookies[:auth] %>
+            <p><%= link_to 'Edit', edit_organization_path(organization) %></p>
+            <p><%= link_to 'Destroy', confirm_deletion_organization_path(organization) %></p>
+          <%# end %>
         </td>
         <td>
           <p><strong>display name:</strong> <%= organization.display_name %></p>

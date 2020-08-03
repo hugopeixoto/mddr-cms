@@ -3,15 +3,14 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 fieldset {
-  width: 500px;
+  width: 400px;
 }
-input[type=text] { width: 500px; }
-textarea { width: 500px; height: 100px; }
+input[type=text] { width: 400px; }
+textarea { width: 400px; height: 100px; }
 fieldset > legend { font-weight: bold }
 
-div.fieldsets {
-  columns: 2;
-}
+@media (min-width: 961px) and (max-width: 1400px) { div.fieldsets { columns: 2; } }
+@media (min-width: 1401px) { div.fieldsets { columns: 3; } }
 
 div.avoid-break { break-inside: avoid; }
-div.fieldsets > fieldset { break-inside: avoid; }
+fieldset { break-inside: avoid; }

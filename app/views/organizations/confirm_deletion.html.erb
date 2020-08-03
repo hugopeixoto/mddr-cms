@@ -1,0 +1,11 @@
+<h1>Confirm deletion</h1>
+
+<%= form_with model: @organization, method: :delete do |f| %>
+  <p>Do you really want to delete this organization?</p>
+
+  <p><strong>display name:</strong> <%= @organization.display_name %></p>
+  <p><strong>legal name:</strong> <%= @organization.legal_name %></p>
+
+  <p><%= f.submit "Yes, I really want to delete it" %></p>
+  <p><%= link_to "No, take me back!", organizations_path %></p>
+<% end %>
