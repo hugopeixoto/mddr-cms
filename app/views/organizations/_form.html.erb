@@ -11,149 +11,185 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :display_name %>
-    <%= form.text_area :display_name %>
-  </div>
+  <div class="fieldsets">
+    <fieldset>
+      <legend>Basic info</legend>
 
-  <div class="field">
-    <%= form.label :legal_name %>
-    <%= form.text_area :legal_name %>
-  </div>
+      <div class="field">
+        <%= form.label :display_name %>
+        <%= form.text_field :display_name %>
+      </div>
 
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
-  </div>
+      <div class="field">
+        <%= form.label :legal_name %>
+        <%= form.text_field :legal_name %>
+      </div>
 
-  <div class="field">
-    <%= form.label :department %>
-    <%= form.text_field :department %>
-  </div>
+      <div class="field">
+        <%= form.label :url %>
+        <%= form.text_field :url %>
+      </div>
 
-  <div class="field">
-    <%= form.label :street_address %>
-    <%= form.text_field :street_address %>
-  </div>
+      <div class="field">
+        <%= form.label :operating_countries %>
+        <%= form.text_area :operating_countries %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
+    <fieldset>
+      <legend>Address</legend>
 
-  <div class="field">
-    <%= form.label :neighbourhood %>
-    <%= form.text_field :neighbourhood %>
-  </div>
+      <div class="field">
+        <%= form.label :department %>
+        <%= form.text_field :department %>
+      </div>
 
-  <div class="field">
-    <%= form.label :postal_code %>
-    <%= form.text_field :postal_code %>
-  </div>
+      <div class="field">
+        <%= form.label :street_address %>
+        <%= form.text_field :street_address %>
+      </div>
 
-  <div class="field">
-    <%= form.label :region %>
-    <%= form.text_field :region %>
-  </div>
+      <div class="field">
+        <%= form.label :city %>
+        <%= form.text_field :city %>
+      </div>
 
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
-  </div>
+      <!--<div class="field">
+        <%= form.label :neighbourhood %>
+        <%= form.text_field :neighbourhood %>
+      </div>-->
 
-  <div class="field">
-    <%= form.label :requires_identification %>
-    <%= form.check_box :requires_identification %>
-  </div>
+      <div class="field">
+        <%= form.label :postal_code %>
+        <%= form.text_field :postal_code %>
+      </div>
 
-  <div class="field">
-    <%= form.label :operating_countries %>
-    <%= form.text_area :operating_countries %>
-  </div>
+      <!--<div class="field">
+        <%= form.label :region %>
+        <%= form.text_field :region %>
+      </div>-->
 
-  <div class="field">
-    <%= form.label :custom_identifier %>
-    <%= form.text_field :custom_identifier %>
-  </div>
+      <div class="field">
+        <%= form.label :country %>
+        <%= form.text_field :country %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= form.label :identifiers %>
-    <%= form.text_area :identifiers %>
-  </div>
+    <fieldset class='identification'>
+      <legend>Identification</legend>
 
-  <div class="field">
-    <%= form.label :generic_url %>
-    <%= form.text_field :generic_url %>
-  </div>
+      <div class="field">
+        <%= form.label :requires_identification %>
+        <%= form.check_box :requires_identification %>
+      </div>
 
-  <div class="field">
-    <%= form.label :generic_email %>
-    <%= form.text_field :generic_email %>
-  </div>
+      <div class="field">
+        <%= form.label :identifiers %>
+        <%= form.text_area :identifiers %>
+      </div>
 
-  <div class="field">
-    <%= form.label :generic_note %>
-    <%= form.text_area :generic_note %>
-  </div>
+      <div class="field">
+        <%= form.label :custom_identifier %>
+        <%= form.text_field :custom_identifier %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= form.label :access_url %>
-    <%= form.text_field :access_url %>
-  </div>
+    <div class='avoid-break'>
+    <fieldset class='generic-info'>
+      <legend>Generic info</legend>
 
-  <div class="field">
-    <%= form.label :access_email %>
-    <%= form.text_field :access_email %>
-  </div>
+      <div class="field">
+        <%= form.label :generic_url %>
+        <%= form.text_field :generic_url %>
+      </div>
 
-  <div class="field">
-    <%= form.label :access_note %>
-    <%= form.text_area :access_note %>
-  </div>
+      <div class="field">
+        <%= form.label :generic_email %>
+        <%= form.text_field :generic_email %>
+      </div>
 
-  <div class="field">
-    <%= form.label :deletion_url %>
-    <%= form.text_field :deletion_url %>
-  </div>
+      <div class="field">
+        <%= form.label :generic_note %>
+        <%= form.text_area :generic_note %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= form.label :deletion_email %>
-    <%= form.text_field :deletion_email %>
-  </div>
+    <fieldset>
+      <legend>Access requests info</legend>
 
-  <div class="field">
-    <%= form.label :deletion_note %>
-    <%= form.text_area :deletion_note %>
-  </div>
+      <div class="field">
+        <%= form.label :access_url %>
+        <%= form.text_field :access_url %>
+      </div>
 
-  <div class="field">
-    <%= form.label :portability_url %>
-    <%= form.text_field :portability_url %>
-  </div>
+      <div class="field">
+        <%= form.label :access_email %>
+        <%= form.text_field :access_email %>
+      </div>
 
-  <div class="field">
-    <%= form.label :portability_email %>
-    <%= form.text_field :portability_email %>
-  </div>
+      <div class="field">
+        <%= form.label :access_note %>
+        <%= form.text_area :access_note %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= form.label :portability_note %>
-    <%= form.text_area :portability_note %>
-  </div>
+    <fieldset>
+      <legend>Deletion requests info</legend>
 
-  <div class="field">
-    <%= form.label :correction_url %>
-    <%= form.text_field :correction_url %>
-  </div>
+      <div class="field">
+        <%= form.label :deletion_url %>
+        <%= form.text_field :deletion_url %>
+      </div>
 
-  <div class="field">
-    <%= form.label :correction_email %>
-    <%= form.text_field :correction_email %>
-  </div>
+      <div class="field">
+        <%= form.label :deletion_email %>
+        <%= form.text_field :deletion_email %>
+      </div>
 
-  <div class="field">
-    <%= form.label :correction_note %>
-    <%= form.text_area :correction_note %>
+      <div class="field">
+        <%= form.label :deletion_note %>
+        <%= form.text_area :deletion_note %>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Portability requests info</legend>
+
+      <div class="field">
+        <%= form.label :portability_url %>
+        <%= form.text_field :portability_url %>
+      </div>
+
+      <div class="field">
+        <%= form.label :portability_email %>
+        <%= form.text_field :portability_email %>
+      </div>
+
+      <div class="field">
+        <%= form.label :portability_note %>
+        <%= form.text_area :portability_note %>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Correction requests info</legend>
+
+      <div class="field">
+        <%= form.label :correction_url %>
+        <%= form.text_field :correction_url %>
+      </div>
+
+      <div class="field">
+        <%= form.label :correction_email %>
+        <%= form.text_field :correction_email %>
+      </div>
+
+      <div class="field">
+        <%= form.label :correction_note %>
+        <%= form.text_area :correction_note %>
+      </div>
+    </fieldset>
+    </div>
   </div>
 
   <div class="actions">

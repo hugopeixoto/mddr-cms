@@ -1,3 +1,17 @@
 // Place all the styles related to the organizations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+fieldset {
+  width: 500px;
+}
+input[type=text] { width: 500px; }
+textarea { width: 500px; height: 100px; }
+fieldset > legend { font-weight: bold }
+
+div.fieldsets {
+  columns: 2;
+}
+
+div.avoid-break { break-inside: avoid; }
+div.fieldsets > fieldset { break-inside: avoid; }
